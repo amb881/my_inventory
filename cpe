@@ -1,0 +1,14 @@
+from item import Item
+
+class CPE(Item):
+    def __init__(self, cpe_model, service_provider, country, serial_number, hardware_version, firmware_version, tracking_id, cpe_status, return_date, return_reason):
+        self.CPE_cpe_model = cpe_model
+        self.CPE_service_provider = service_provider
+        self.CPE_country = country
+        self.CPE_serial_number = serial_number
+        self.CPE_hardware_version = hardware_version
+        self.CPE_firmware_version = firmware_version
+        self.CPE_tracking_id = tracking_id
+        self.CPE_cpe_status = cpe_status
+        self.CPE_return_date = return_date
+        self.CPE_return_reason = return_reason
