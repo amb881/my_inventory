@@ -1,0 +1,45 @@
+from client_hardware import Client_Hardware
+from hardware import Hardware
+from software import Software
+from cpe import CPE
+from item import Item
+
+class Catalog(object):
+
+    def __init__(self):
+        """
+        inicia objeto
+        """
+        self.catalog = {}
+        self.index = 0
+
+
+    def add_item(self, id, nome):
+        self.catalog[id] = nome
+
+
+    def delete_item(self,id):
+        del self.catalog[id]
+
+
+    def check_item(self, id):
+            print self.catalog[id]
+
+
+    def print_catalog(self):
+        print self.catalog
+
+
+    def check_id(self):
+        for i in self.catalog:
+            if i == self.catalog[id]:
+                print i
+
+
+    def brand_cpe(self, brand):
+        for i in self.catalog:
+            if str(i) == brand:
+                print i
+
+    def stock_cpe(self, status):
+        pass
