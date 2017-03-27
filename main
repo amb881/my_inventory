@@ -1,0 +1,89 @@
+from client_hardware import Client_Hardware
+from hardware import Hardware
+from software import Software
+from cpe import CPE
+from item import Item
+from catalog import Catalog
+import sys
+
+
+def function(question):
+    answer = raw_input(question)
+
+    if answer == "exit":
+        sys.exit(1)
+
+    return answer
+
+def main():
+
+    inventory = Catalog()
+
+    answer = None
+
+    while answer != "exit":
+
+
+
+        answer = function("Do you want to add, delete, check or print?\n")
+
+        if answer == "exit":
+            continue
+
+        if answer == "add" or answer == "a":
+            nome = function("What's the name of the item?\n")
+            id = function("What's the id of the item?\n")
+            brand = function("What's the brand of the item?\n")
+            reception_date = function("What's the reception date of the item?\n")
+            comments = function("Comments about the item:\n")
+
+            i = Item(id, nome, brand, reception_date, comments)
+
+            inventory.add_item(i)
+
+        elif answer == "delete" or answer == "d":
+            delete = int(function("What item do you want to delete?\n"))
+            try:
+                print inventory.delete_item(delete)
+            except KeyError as e:
+                print "not exists: {}".format(e.message)
+
+        elif answer == "check" or answer == "c":
+            check = int(function("What item do  you want to check?\n"))
+            try:
+                print inventory.check_item(check)
+            except KeyError as e:
+                print "not exists: {}".format(e.message)
+
+        elif answer == "print" or answer == "p":
+            print inventory.print_catalog()
+
+
+        elif answer == "id" or answer == "search id":
+            variavel = raw_input("What is the id?")
+            if variavel == inventory[id]:
+                    print variavel
+
+
+        elif answer == "print cpe" or answer == "pc":
+            marca = raw_input("What is the brand?")
+            inventory.brand_cpe(marca)
+        """
+        elif answer == "print cpe stock" or answer == "pcs":
+            for i in items:
+                if status = 'stock':
+                    number = number + 1
+                else:
+                    continue
+            print number
+
+        elif answer == "hardware" or "h":
+
+        """
+
+
+
+
+
+
+main()
