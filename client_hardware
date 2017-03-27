@@ -1,0 +1,12 @@
+from item import Item
+
+class Client_Hardware(Item):
+    def __init__(self, comp_num, type, sub_type, model, serial_number, operating_system, supplier, details):
+        self.Hardware_comp_num = comp_num
+        self.Hardware_type = type
+        self.Hardware_sub_sytpe = sub_type
+        self.Hardware_model = model
+        self.Hardware_serial_number = serial_number
+        self.Hardware_operating_system = operating_system
+        self.Hardware_supplier = supplier
+        self.Hardware_details = details
