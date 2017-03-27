@@ -1,0 +1,11 @@
+class Item(object):
+    def __init__(self, id,nome, brand, reception_date, comments):
+        self.item_id = id
+        self.item_nome = nome
+        self.item_brand = brand
+        self.item_reception_date = reception_date
+        self.item_comments = comments
+    """
+    def __str__(self):
+        return "id: {}, nome: {}".format(self.item_id, self.item_nome)
+    """
