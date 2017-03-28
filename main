@@ -60,22 +60,16 @@ def main():
 
 
         elif answer == "id" or answer == "search id":
-            variavel = raw_input("What is the id?")
-            if variavel == inventory[id]:
-                    print variavel
+            search_id = raw_input("What is the id?")
+            inventory.check_item(search_id)
 
 
         elif answer == "print cpe" or answer == "pc":
-            marca = raw_input("What is the brand?")
-            inventory.brand_cpe(marca)
+            search_brand = raw_input("What is the brand?")
+            inventory.brand_cpe(search_brand)
         """
         elif answer == "print cpe stock" or answer == "pcs":
-            for i in items:
-                if status = 'stock':
-                    number = number + 1
-                else:
-                    continue
-            print number
+            inventory.stock_cpe()
 
         elif answer == "hardware" or "h":
 
