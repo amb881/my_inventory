@@ -51,11 +51,18 @@ class Catalog(object):
 
     
     def stock_cpe(self, status):
+    """
+    Funcao mostrar o numero de cpe em stocks
+    """
+        number = 0
         for status in self.catalog:
             if status.cpe_status == "stock":
                 number = number + 1
         print number
                 
     def hardware_model_stock(self):
-        for i in self.catalog:
+    """
+    Funcao para mostrar quantos items de hardware de cada tipo ha em stock
+    """
+    for i in self.catalog:
             
