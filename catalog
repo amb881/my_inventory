@@ -13,33 +13,46 @@ class Catalog(object):
         self.catalog = {}
         self.index = 0
 
-
     def add_item(self, id, nome):
+    """
+    Funcao adicionar item no inventory
+    """
         self.catalog[id] = nome
 
-
+    
     def delete_item(self,id):
+    """
+    Funcao eliminar item do inventory
+    """
         del self.catalog[id]
 
-
+    
     def check_item(self, id):
+    """
+    Funcao mostrar item atraves do id
+    """
             print self.catalog[id]
 
-
+    
     def print_catalog(self):
+    """
+    Funcao dar print ao inventory completo
+    """
         print self.catalog
 
-
-    def check_id(self):
-        for i in self.catalog:
-            if i == self.catalog[id]:
-                print i
-
-
+    
     def brand_cpe(self, brand):
+    """
+    Funcao mostrar modelos de cpe de uma brand
+    """
         for i in self.catalog:
-            if str(i) == brand:
-                print i
+            if i.item_brand == brand:
+                print CPE.CPE_cpe_model(i)
 
+    
     def stock_cpe(self, status):
-        pass
+        for status in self.catalog:
+            if status.cpe_status == "stock":
+                number = number + 1
+        print number
+                
