@@ -56,3 +56,6 @@ class Catalog(object):
                 number = number + 1
         print number
                 
+    def hardware_model_stock(self):
+        for i in self.catalog:
+            
