@@ -55,18 +55,18 @@ def main():
 
         elif answer == "id" or answer == "search id":
             search_id = raw_input("What is the id?")
-            inventory.check_item(search_id)
+            print inventory.check_item(search_id)
 
         elif answer == "print cpe" or answer == "pc":
             search_brand = raw_input("What is the brand?")
-            inventory.brand_cpe(search_brand)
+            print inventory.brand_cpe(search_brand)
 
         elif answer == "print cpe stock" or answer == "pcs":
-            inventory.stock_cpe()
+            print inventory.stock_cpe()
 
-        """    
-        elif answer == "hardware" or "h":
-        """
+        elif answer == "hardware_type" or "ht":
+            print inventory.hardware_model_stock()
+
 main()
 
 
