@@ -1,3 +1,4 @@
+from hardware import Hardware
 from item import Item
 
 class Software(Item):
