@@ -10,15 +10,13 @@ class Catalog(object):
         """
         inicia objeto
         """
-        self.catalog = {Item}
-        self.index = 0
+        self.catalog = {}
 
-    def add_item(self, id, nome):
+    def add_item(self, item):
         """
         Funcao adicionar item no inventory
         """
-        self.catalog[id] = nome
-
+        self.catalog[item.item_id] = item
 
     def delete_item(self, id):
         """
@@ -31,39 +29,54 @@ class Catalog(object):
         """
         Funcao mostrar item atraves do id
         """
-        print self.catalog[id]
+        return self.catalog[id]
 
 
     def print_catalog(self):
         """
         Funcao dar print ao inventory completo
         """
-        print self.catalog
+        return self.catalog
 
 
     def brand_cpe(self, brand):
         """
         Funcao mostrar modelos de cpe de uma brand
         """
-        for i in self.catalog:
-            if i == brand:
-                print CPE.CPE_cpe_model(i)
-
+        models = []
+        for id in self.catalog:
+            item = self.catalog[id]
+            if type(item) is CPE:
+                cpe = item
+                if cpe.item_brand == brand:
+                    if cpe.CPE_cpe_model not in models:
+                        models.append(self.catalog[id].CPE_cpe_model)
+        return models
 
     def stock_cpe(self):
         """
         Funcao mostrar o numero de cpe em stocks
         """
         number = 0
-        for status in self.catalog:
-            if status.cpe_status == "stock":
-                number = number + 1
-        print number
-
+        for id in self.catalog:
+            item = self.catalog[id]
+            if type(item) is CPE:
+                cpe = item
+                if cpe.cpe_status == "stock":
+                    number = number + 1
+        return number
 
     def hardware_model_stock(self):
         """
         Funcao para mostrar quantos items de hardware de cada tipo ha em stock
         """
-        for i in self.catalog:
-            pass
+        hardware_types ={}
+        for id in self.catalog:
+            item = self.catalog[id]
+            if type(item) is Hardware:
+                hardware = item
+                if hardware.Hardware_type not in hardware_types:
+                    hardware_types[hardware.Hardware_type] = 1
+                else:
+                    hardware_types[hardware.Hardware_type] += 1
+        return hardware_types
