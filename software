@@ -1,7 +1,7 @@
-from hardware import Hardware
 from item import Item
 
 class Software(Item):
+
     def __init__(self, version, hardware_id, software_supplier, license_number, source):
         self.Software_version = version
         self.Software_software_supplier = software_supplier
