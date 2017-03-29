@@ -23,21 +23,16 @@ def main():
 
     while answer != "exit":
 
-
-
-        answer = function("Do you want to add, delete, check or print?\n")
+        answer = function("What do you wanna do?\n")
 
         if answer == "exit":
             continue
 
         if answer == "add" or answer == "a":
-            nome = function("What's the name of the item?\n")
             id = function("What's the id of the item?\n")
-            brand = function("What's the brand of the item?\n")
-            reception_date = function("What's the reception date of the item?\n")
-            comments = function("Comments about the item:\n")
+            nome = function("What's the name of the item?\n")
 
-            i = Item(id, nome, brand, reception_date, comments)
+            i = Item(id, nome)
 
             inventory.add_item(i)
 
@@ -58,26 +53,21 @@ def main():
         elif answer == "print" or answer == "p":
             print inventory.print_catalog()
 
-
         elif answer == "id" or answer == "search id":
             search_id = raw_input("What is the id?")
             inventory.check_item(search_id)
 
-
         elif answer == "print cpe" or answer == "pc":
             search_brand = raw_input("What is the brand?")
             inventory.brand_cpe(search_brand)
-        """
+
         elif answer == "print cpe stock" or answer == "pcs":
             inventory.stock_cpe()
 
+        """    
         elif answer == "hardware" or "h":
-
         """
-
-
-
-
-
-
 main()
+
+
+
